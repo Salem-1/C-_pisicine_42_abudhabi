@@ -1,6 +1,6 @@
 NAME = phonebook
 TEST = dev_phonebook
-SRC = phonebook.cpp
+SRC = phonebook.cpp contact.cpp contact_errs.cpp
 TEST_F = test/test_phonebook.cpp  $(SRC)
 CFLAGS= -Wall -Wextra -Werror -std=c++98
 CC = c++ 
