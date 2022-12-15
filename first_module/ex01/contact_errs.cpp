@@ -6,20 +6,17 @@
 /*   By: ahsalem <ahsalem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 14:21:21 by ahsalem           #+#    #+#             */
-/*   Updated: 2022/12/13 14:22:57 by ahsalem          ###   ########.fr       */
+/*   Updated: 2022/12/15 20:34:59 by ahsalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.h"
-#include "contact.h"
-#include <iostream>
+#include "phonebook.hpp"
 
-void	Contact::err_name(std::string *name)
+void	Contact::err_name(void)
 {
 	std::cout << "\n\nthe longest name in history is Wolfeschlegelsteinhausenbergerdorff\n" << std::endl;
 	std::cout << "It seems you have longer name, your name should be recorded in genius";
 	std::cout << " not here\nFor now I will store the first 35 char of your malicous string\n\n";
-	*name = (*name).std::string::substr(0, 35);
 }
 
 
@@ -43,4 +40,10 @@ void	Contact::err_phone(void)
 void	Contact::empty_field_message(void)
 {
 	std::cout << "Please enter valid value then press Enter!" << std::endl;
+}
+
+void	handle_malicious_input()
+{
+	std::cout << "Error in recieving input, will close the program" << std::endl;
+	exit(1);
 }

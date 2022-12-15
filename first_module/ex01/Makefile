@@ -1,6 +1,7 @@
 NAME = phonebook
 TEST = dev_phonebook
-SRC = phonebook.cpp contact.cpp contact_errs.cpp
+SRC = phonebook.cpp contact.cpp contact_errs.cpp phonebook_utils.cpp\
+	  contact_setters.cpp contact_getters.cpp 
 TEST_F = test/test_phonebook.cpp  $(SRC)
 CFLAGS= -Wall -Wextra -Werror -std=c++98
 CC = c++ 
@@ -27,3 +28,4 @@ $(TEST): $(T_OBJ)
 	$(CC)  $(CFLAGS) $(T_OBJ) -o $(TEST)
 	clear
 
+t: fclean test

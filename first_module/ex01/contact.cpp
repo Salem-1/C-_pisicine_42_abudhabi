@@ -1,37 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahsalem <ahsalem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 09:16:46 by ahsalem           #+#    #+#             */
-/*   Updated: 2022/12/13 14:21:45 by ahsalem          ###   ########.fr       */
+/*   Updated: 2022/12/15 14:34:36 by ahsalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.h"
-#include "contact.h"
-#include <iostream>
-
-void	Contact::set_name(std::string *name, std::string message)
-{
-	std::cout << message;
-	getline(std::cin, *name);
-	if (std::cin.fail())
-	{
-		std::cout << "Error in recieving input, will close the program" << std::endl;
-		exit(1);
-	}
-	if ((*name).length() == 0)
-	{
-		Contact::empty_field_message();
-		set_name(name, message);
-	}
-	else if ((*name).length() > 35)
-		err_name(name);
-}
-
+#include "phonebook.hpp"
 
 void	Contact::set_darkest_secret(void)
 {
